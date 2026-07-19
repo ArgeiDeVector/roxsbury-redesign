@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roxsbury Deli &amp; Grill</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  /* HERO grid + content (page-specific; chrome lives in assets/style.css) */
+  /* Home hero h1: brand name white, gold kept only as the .accent detail (About stays fully gold via shared sheet) */
+  .topband.hero h1{color:var(--text);} /* brand name white; "Deli & Grill" stays gold via .accent */
+  .hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;}
+  .hero .eyebrow{display:inline-block;font-size:.8rem;letter-spacing:3px;text-transform:uppercase;
+    color:var(--gold-soft);margin-bottom:18px;}
+  .hero p.lead{margin-bottom:30px;}
+  .hero .cta{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{padding:14px 30px;border-radius:40px;font-weight:600;font-size:.95rem;transition:.3s;cursor:pointer;border:0;}
+  .btn-primary{background:var(--wine);color:#fff;}
+  .btn-primary:hover{background:var(--gold);color:#111;transform:translateY(-2px);}
+  .btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.25);}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+  .btn-order{background:var(--gold);color:#111;}
+  .btn-order:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(245,190,0,.35);}
+  .hero .photo{position:relative;display:flex;justify-content:center;align-items:center;min-height:360px;}
+  .hero .photo img{width:90%;max-width:420px;height:auto;object-fit:contain;display:block;padding:0;background:transparent;}
+
+  /* SECTION SHELL */
+  section.block{padding:110px 0;}
+  .sec-title{font-size:clamp(2rem,4vw,3rem);margin-bottom:18px;}
+
+  /* ABOUT */
+  #about{background:linear-gradient(180deg,#0e0e0e,#121212);}
+  .about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:54px;align-items:center;}
+  .about-grid .story p{color:var(--muted);margin-bottom:16px;font-size:1.02rem;}
+  .about-grid .story .stats{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;}
+  .chip{background:var(--panel-2);border:1px solid rgba(255,255,255,.07);border-radius:999px;
+    padding:8px 16px;font-size:.82rem;color:#e8e8e8;}
+  .about-grid .img{border-radius:22px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.45);}
+  .about-grid .img img{width:100%;height:420px;object-fit:cover;display:block;}
+  .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:54px;}
+  .rcard{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:22px;}
+  .rcard .stars{color:var(--gold);letter-spacing:2px;margin-bottom:10px;}
+  .rcard p{font-size:.9rem;color:#dcdcdc;margin-bottom:12px;}
+  .rcard h4{font-family:'Poppins';font-weight:600;font-size:.85rem;color:var(--gold-soft);}
+
+  /* LOCATION */
+  #location{background:#0e0e0e;}
+  .maps{display:grid;grid-template-columns:1fr;gap:18px;margin:34px 0;}
+  .map-box{border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 18px 44px rgba(0,0,0,.4);background:#000;}
+  .map-box.map-hero{border:1px solid rgba(245,190,0,.35);box-shadow:0 0 0 1px rgba(245,190,0,.18),0 18px 50px rgba(245,190,0,.10);}
+  .map-box iframe{width:100%;height:340px;border:0;display:block;}
+  .map-hero iframe{height:420px;}
+  .map-box .cap{font-size:.78rem;color:var(--muted);padding:10px 14px;border-top:1px solid rgba(255,255,255,.06);}
+  .map-box .cap a{color:var(--gold);}
+  .map-actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:4px;}
+  .btn-call,.btn-dir{font-size:.95rem;font-weight:600;padding:13px 22px;border-radius:999px;
+    transition:.22s;text-align:center;}
+  .btn-call{background:var(--gold);color:#111;}
+  .btn-call:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(245,190,0,.35);}
+  .btn-dir{background:transparent;color:var(--gold);border:1px solid var(--gold);}
+  .btn-dir:hover{background:rgba(245,190,0,.12);transform:translateY(-2px);}
+  .btn-ig{background:var(--gold);color:#111;border-radius:999px;padding:13px 22px;font-size:.95rem;font-weight:600;transition:.22s;}
+  .btn-ig:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(245,190,0,.35);}
+  /* HERO LOGO — bob (container) + spin + nav-style box & pulsing glow (blended, no card) */
+  .hero .photo{position:relative;perspective:700px;animation:heroFloat 3.4s ease-in-out infinite;}
+  @keyframes heroFloat{
+    0%,100%{transform:translateY(0);}
+    50%    {transform:translateY(-12px);}
+  }
+  .hero-logo{position:relative;z-index:1;transform-style:preserve-3d;
+    border:2px solid rgba(245,190,0,.45);border-radius:28px;
+    box-shadow:0 0 14px rgba(245,190,0,.18);
+    animation:heroSpin 9s linear infinite, logoPulse 3.2s ease-in-out infinite;}
+  @keyframes heroSpin{
+    from{transform:rotateY(0deg);}
+    to  {transform:rotateY(360deg);}
+  }
+  .info{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px;}
+  .info-address{grid-column:1 / -1;}
+  .ibox{background:var(--panel);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:20px;}
+  .ibox h3{font-family:'Poppins';font-size:.78rem;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--gold-soft);margin-bottom:8px;}
+  .ibox p{color:#e6e6e6;font-size:.95rem;}
+  .ibox a{color:var(--text);}  /* phone + Instagram white per brand theme */
+
+  @media(max-width:880px){
+    .hero .grid,.about-grid{grid-template-columns:1fr;gap:30px;}
+    .hero .photo img{height:320px;}
+    .maps,.info,.reviews{grid-template-columns:1fr;}
+    section.block{padding:80px 0;}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="brand" href="#home">
+    <img src="assets/logo.png" alt="Roxsbury logo">
+    <span><b>Roxsbury</b><span>Deli &amp; Grill</span></span>
+  </a>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+  <a class="nav-menu" href="menu.html">View Menu</a>
+  <a class="nav-order" href="https://roxsbury.tatinc.us" target="_blank" rel="noopener">Order Online</a>
+  <div class="links">
+    <a href="#home" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="#location">Location</a>
+    <a href="#reviews">Reviews</a>
+  </div>
+</nav>
+
+<!-- HOME / HERO -->
+<section class="topband hero" id="home">
+  <div class="wrap grid">
+    <div class="reveal">
+      <span class="eyebrow">Port Hueneme · Since 2025</span>
+      <h1>Roxsbury <span class="accent">Deli &amp; Grill</span></h1>
+      <p class="lead">Classic American flavor — fresh, hot, authentic. Breakfast, burgers, deli sandwiches and seafood, made with passion.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="menu.html">View Menu</a>
+        <a class="btn btn-ghost" href="about.html">Our Story</a>
+        <a class="btn btn-order" href="https://roxsbury.tatinc.us" target="_blank" rel="noopener">Order Online</a>
+      </div>
+    </div>
+    <div class="photo reveal">
+      <img class="hero-logo" src="assets/logo.png" alt="Roxsbury logo">
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="block" id="location">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Visit Us</div>
+      <h2 class="sec-title"><span class="accent">Find</span> Roxbury</h2>
+      <p style="color:var(--muted);max-width:54ch;">Right on Channel Islands Blvd. Satellite and street view below — come see us, or call ahead.</p>
+    </div>
+
+    <div class="maps reveal">
+      <div class="map-box map-hero">
+        <iframe title="Roxsbury location — satellite view"
+          src="https://maps.google.com/maps?q=443%20W%20Channel%20Islands%20Blvd%2C%20Port%20Hueneme%2C%20CA%2093041&t=k&z=16&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="cap">🛰️ Satellite view · <a href="https://www.google.com/maps/@34.1760181,-119.2098328,3a,66.3y,6.88h,82.27t/data=!3m7!1e1!3m5!1sWSiYmgfp5k72YLhdcM47fA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D7.729092247313957%26panoid%3DWSiYmgfp5k72YLhdcM47fA%26yaw%3D6.88351299287328!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Open live street view ↗</a></div>
+      </div>
+      <div class="map-actions">
+        <a class="btn btn-primary" href="tel:+18052532046">📞 Call (805) 253-2046</a>
+        <a class="btn-dir" href="https://www.google.com/maps/dir/?api=1&destination=443+W+Channel+Islands+Blvd+Port+Hueneme+CA+93041" target="_blank" rel="noopener">🧭 Get Directions</a>
+        <a class="btn-ig" href="https://www.instagram.com/roxsburydeli_/" target="_blank" rel="noopener">📸 Instagram</a>
+      </div>
+    </div>
+
+    <div class="info reveal">
+      <div class="ibox info-address">
+        <h3>📍 Address</h3>
+        <p>443 W Channel Islands Blvd<br>Port Hueneme, CA 93041</p>
+      </div>
+      <div class="ibox">
+        <h3>📞 Phone</h3>
+        <p>(805) 253-2046</p>
+      </div>
+      <div class="ibox">
+        <h3>🕒 Hours</h3>
+        <p><strong>Monday:</strong> 8:00 AM – 3:00 PM<br>
+           <strong>Tue – Sun:</strong> 8:00 AM – 8:30 PM</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS (real public ratings — no invented quotes) -->
+<section class="block" id="reviews">
+  <div class="wrap reveal">
+    <div class="kicker">Diner Reviews</div>
+    <h2 class="sec-title">What <span class="accent">Regulars</span> Say</h2>
+    <p style="color:var(--muted);max-width:54ch;margin-bottom:8px;">Roxsbury carries a long local reputation. Live ratings pulled from public review platforms:</p>
+    <div class="reviews">
+      <div class="rcard">
+        <div class="stars">★★★★☆</div>
+        <p><b>4.3</b> · 609 Google reviews</p>
+        <h4><a href="https://share.google/xwkmklz6P82yNXEMx" target="_blank" rel="noopener">Google Maps ↗</a></h4>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★☆</div>
+        <p><b>4.3</b> · 44 Yelp reviews</p>
+        <h4><a href="https://www.yelp.com/biz/roxsbury-deli-port-hueneme-3" target="_blank" rel="noopener">Yelp ↗</a></h4>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★☆</div>
+        <p><b>4.0</b> · 185 Restaurantji ratings</p>
+        <h4><a href="https://www.restaurantji.com/ca/port-hueneme/roxsbury-deli-and-grill-/" target="_blank" rel="noopener">Restaurantji ↗</a></h4>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★☆</div>
+        <p><b>3.8</b> · 78 Tripadvisor reviews</p>
+        <h4><a href="https://www.tripadvisor.com/Restaurant_Review-g32915-d540392-Reviews-Roxsbury_Deli_Grill-Port_Hueneme_California.html" target="_blank" rel="noopener">Tripadvisor ↗</a></h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Roxsbury Deli &amp; Grill · 443 W Channel Islands Blvd, Port Hueneme, CA 93041</footer>
+
+<script>
+  // Scroll reveal (with safety net: reveal all after 1.2s regardless)
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
+  },{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  setTimeout(()=>document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in')), 1200);
+
+  // Active nav link on scroll
+  const sections = ['home','about','location','reviews'].map(id=>document.getElementById(id));
+  const navLinks = document.querySelectorAll('.nav .links a:not([href="menu.html"])');
+  window.addEventListener('scroll',()=>{
+    let cur='home';
+    sections.forEach(s=>{ if(s && s.getBoundingClientRect().top <= 120) cur=s.id; });
+    navLinks.forEach(a=>a.classList.toggle('active', a.getAttribute('href')==='#'+cur));
+  });
+
+  // Mobile hamburger
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('.nav .links');
+  if (navToggle && navMenu){
+    navToggle.addEventListener('click', () => {
+      const open = navMenu.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navMenu.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }));
+  }
+</script>
+</body>
+</html>

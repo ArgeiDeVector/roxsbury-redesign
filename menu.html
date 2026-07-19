@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roxsbury Deli & Grill — Menu</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  /* MENU 003-variant-rework: sticky rail + compact list (#3 direction) */
+  .topband.menu-hero{min-height:auto;padding:calc(var(--nav-h) + 30px) 0 40px;}
+  .menu-shell{display:grid;grid-template-columns:230px 1fr;gap:44px;max-width:1120px;margin:0 auto;padding:0 24px 100px;}
+
+  /* STICKY RAIL */
+  .rail{position:sticky;top:var(--nav-h);align-self:start;display:flex;flex-direction:column;gap:1px;
+    border-left:1px solid rgba(255,255,255,.08);padding-left:14px;}
+  .rail a{font-size:.86rem;color:#cfcfcf;padding:7px 0;transition:.2s;position:relative;}
+  .rail a:hover{color:var(--gold);}
+  .rail a.active{color:var(--gold);font-weight:600;}
+  .rail a.active::before{content:"";position:absolute;left:-15px;top:0;bottom:0;width:2px;background:var(--gold);}
+
+  /* CONTENT */
+  .cat{margin-bottom:52px;scroll-margin-top:var(--nav-h);}
+  .cat h2{font-family:'Playfair Display',serif;font-size:1.7rem;margin-bottom:4px;color:var(--text);}
+  .cat .sub{color:var(--muted);font-size:.84rem;margin-bottom:16px;}
+  .items{display:grid;grid-template-columns:1fr 1fr;gap:4px 30px;}
+  .item{padding:11px 0;border-bottom:1px solid rgba(255,255,255,.05);}
+  .item .row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;}
+  .item .nm{font-weight:500;font-size:.96rem;color:#f2f2f2;}
+  .item .pr{color:var(--gold-soft);font-weight:600;font-size:.9rem;white-space:nowrap;}
+  .item .ds{color:var(--muted);font-size:.78rem;margin-top:3px;line-height:1.4;}
+
+  @media(max-width:880px){
+    .menu-shell{grid-template-columns:1fr;gap:18px;padding:0 18px 80px;}
+    .rail{position:sticky;top:64px;z-index:50;flex-direction:row;overflow-x:auto;gap:4px 16px;
+      border-left:0;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);background:rgba(14,14,14,.92);
+      -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);}
+    .rail::-webkit-scrollbar{display:none;}
+    .rail a{white-space:nowrap;padding:4px 0;}
+    .rail a.active::before{display:none;}
+    .items{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="index.html">
+    <img src="assets/logo.png" alt="Roxsbury logo">
+    <span><b>Roxsbury</b><span>Deli &amp; Grill</span></span>
+  </a>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+  <a class="nav-menu" href="menu.html">View Menu</a>
+  <a class="nav-order" href="https://roxsbury.tatinc.us" target="_blank" rel="noopener">Order Online</a>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="index.html#location">Location</a>
+    <a href="index.html#reviews">Reviews</a>
+  </div>
+</nav>
+
+<header class="topband centered menu-hero">
+  <div class="wrap">
+    <div class="kicker">Fresh · Hot · Authentic</div>
+    <h1>Our <span class="accent">Menu</span></h1>
+    <p class="lead">Breakfast, burgers, deli sandwiches and seafood — made with passion. A leaner, focused menu than its heyday — the same corner across from the base.</p>
+  </div>
+</header>
+
+<div class="menu-shell">
+  <nav class="rail">
+    <a href="#breakfast-plates">Breakfast Plates</a>
+    <a href="#omelettes">Omelettes</a>
+    <a href="#scrambles">Scrambles</a>
+    <a href="#pancakes">Pancakes &amp; Waffles</a>
+    <a href="#sides">Sides</a>
+    <a href="#burgers">Burgers</a>
+    <a href="#deli">Deli Sandwiches</a>
+    <a href="#hot-melts">Hot Sandwiches &amp; Melts</a>
+    <a href="#specialty">Specialty Sandwiches</a>
+    <a href="#soups">Soups &amp; Pastas</a>
+    <a href="#salads">Salads</a>
+    <a href="#seafood">Seafood</a>
+    <a href="#entrees">Dinner Entrees</a>
+    <a href="#appetizers">Appetizers</a>
+    <a href="#desserts">Desserts</a>
+    <a href="#drinks">Drinks</a>
+    <a href="#kids">Kids Menu</a>
+  </nav>
+
+  <div class="menu-content">
+<!--CATS-->
+
+<!-- BREAKFAST PLATES -->
+<section class="cat" id="breakfast-plates">
+  <h2>Breakfast Plates</h2>
+  <p class="sub">Classic American breakfast favorites served fresh every day.</p>
+  <div class="items">
+    <div class="item"><div class="row"><span class="nm">Classic</span><span class="pr">$14</span></div><div class="ds">Two eggs, choice of meat, potatoes or fruit &amp; toast.</div></div>
+    <div class="item"><div class="row"><span class="nm">NY Steak &amp; Eggs 7oz</span><span class="pr">$25</span></div><div class="ds">Two eggs served with choice of potatoes &amp; toast.</div></div>
+    <div class="item"><div class="row"><span class="nm">Top Sirloin Steak &amp; Eggs 8oz</span><span class="pr">$23</span></div><div class="ds">Two eggs served with potatoes &amp; toast.</div></div>
+    <div class="item"><div class="row"><span class="nm">Country Fried Steak</span><span class="pr">$20</span></div><div class="ds">Battered beef steak served with two eggs, potatoes &amp; toast.</div></div>
+    <div class="item"><div class="row"><span class="nm">Eggs Benedict</span><span class="pr">$16</span></div><div class="ds">Two poached eggs on english muffin with ham or turkey, tomato, hollandaise sauce &amp; fruit.</div></div>
+    <div class="item"><div class="row"><span class="nm">Breakfast Burrito</span><span class="pr">$13</span></div><div class="ds">Scrambled eggs with choice of meat, hashbrowns &amp; mixed cheese. Served with tortilla chips.</div></div>
+    <div class="item"><div class="row"><span class="nm">Corn Beef Hash</span><span class="pr">$16</span></div><div class="ds">Two eggs with a choice of potatoes or fruit &amp; toast.</div></div>
+    <div class="item"><div class="row"><span class="nm">Loco Moco</span><span class="pr">$16</span></div><div class="ds">Two sunny-side-up eggs over beef patty, white rice and brown gravy.</div></div>
+    <div class="item"><div class="row"><span class="nm">Avocado Toast</span><span class="pr">$14</span></div><div class="ds">Avocado topped with 1 egg, sliced tomato &amp; chili flakes. Served with fruit or cottage cheese.</div></div>
+    <div class="item"><div class="row"><span class="nm">Huevos Rancheros</span><span class="pr">$16</span></div><div class="ds">Two eggs any style over a fried tortilla topped with red sauce, mixed cheese &amp; avocado. Served with refried beans, choice of potatoes &amp; corn or flour tortillas.</div></div>
+    <div class="item"><div class="row"><span class="nm">Chilaquiles</span><span class="pr">$17</span></div><div class="ds">Fried tortillas with red house sauce topped with sour cream, red onion &amp; queso fresco with two eggs and choice of potatoes.</div></div>
+    <div class="item"><div class="row"><span class="nm">Lox &amp; Cream Cheese Bagel</span><span class="pr">$17</span></div><div class="ds">Toasted bagel with cream cheese, smoked salmon, tomatoes, onions &amp; capers.</div></div>
+  </div>
+</section>
+
+<!-- OMELETTES -->
+<section class="cat" id="omelettes">
+  <h2>Omelettes</h2>
+  <p class="sub">Three eggs served with choice of potatoes, cottage cheese, or fruit &amp; toast.</p>
+  <div class="items">
+    <div class="item"><div class="row"><span class="nm">Cheese</span><span class="pr">$13</span></div><div class="ds">Mixed cheddar cheese.</div></div>
+    <div class="item"><div class="row"><span class="nm">Spanish</span><span class="pr">$14</span></div><div class="ds">Bell peppers, onions, tomato, mushrooms &amp; mixed cheese topped with red sauce.</div></div>
+    <div class="item"><div class="row"><span class="nm">Chili Cheese</span><span class="pr">$16</span></div><div class="ds">Classic omelette with melted cheese and chili.</div></div>
+    <div class="item"><div class="row"><span class="nm">Ham &amp; Cheese</span><span class="pr">$15</span></div><div class="ds">Ham with melted mixed cheese.</div></div>
+    <div class="item"><div class="row"><span class="nm">Denver</span><span class="pr">$17</span></div><div class="ds">Bell peppers, onions, ham &amp; mixed cheese.</div></div>
+    <div class="item"><div class="row"><span class="nm">Ortega Chili</span><span class="pr">$15</span></div><div class="ds">Made with swiss cheese &amp; sour cream.</div></div>
+    <div class="item"><div class="row"><span class="nm">Deli</span><span class="pr">$16</span></div><div class="ds">Corned beef, pastrami &amp; jack cheese.</div></div>
+    <div class="item"><div class="row"><span class="nm">Spinach &amp; Mushroom</span><span class="pr">$15</span></div><div class="ds">Sauteed spinach, mushrooms &amp; swiss cheese topped with avocado.</div></div>
+    <div class="item"><div class="row"><span class="nm">Veggie</span><span class="pr">$15</span></div><div class="ds">Broccoli, zucchini, mushrooms, tomato, spinach &amp; jack cheese topped with avocado.</div></div>
+    <div class="item"><div class="row"><span class="nm">Chile Verde</span><span class="pr">$17</span></div><div class="ds">Pork cooked in house green salsa with jack cheese.</div></div>
+  </div>
+</section>
+
+<!-- SCRAMBLES -->
+<section class="cat" id="scrambles">
+  <h2>Scrambles</h2>
+  <p class="sub">Served with choice of potatoes, cottage cheese or fruit &amp; toast.</p>
+  <div class="items">
+    <div class="item"><div class="row"><span class="nm">Chorizo</span><span class="pr">$15</span></div><div class="ds">Two eggs and chorizo scrambled topped with mixed cheese &amp; avocado. Choice of tortillas.</div></div>
+    <div class="item"><div class="row"><span class="nm">Veggie</span><span class="pr">$15</span></div><div class="ds">Two eggs, broccoli, zucchini, mushrooms, tomato &amp; spinach topped with avocado.</div></div>
+    <div class="item"><div class="row"><span class="nm">Salmon &amp; Onions</span><span class="pr">$16</span></div><div class="ds">Two eggs, smoked salmon &amp; sauteed onions topped with avocado.</div></div>
+    <div class="item"><div class="row"><span class="nm">Machaca</span><span class="pr">$17</span></div><div class="ds">Two eggs, shredded beef, onions, jalapenos and tomatoes topped with mixed cheese. Choice of tortillas.</div></div>
+  </div>
+</section>
+
+<!-- PANCAKES & WAFFLES -->
+<section class="cat" id="pancakes">
+  <h2>Pancakes, French Toast &amp; Waffles</h2>
+  <p class="sub">Add berries +$1.50 · Add whip +$1.00</p>
+  <div class="items">
+    <div class="item"><div class="row"><span class="nm">Breakfast Combo (2·2·2)</span><span class="pr">$13</span></div><div class="ds">2 pancakes, 2 french toast slices or waffle, 2 choice of meat &amp; 2 eggs.</div></div>
+    <div class="item"><div class="row"><span class="nm">Half-Stack Pancakes</span><span class="pr">$6</span></div><div class="ds">Two fluffy pancakes served fresh and hot.</div></div>
+    <div class="item"><div class="row"><span class="nm">Full-Stack Pancakes</span><span class="pr">$10</span></div><div class="ds">Three fluffy pancakes served with butter and syrup.</div></div>
+    <div class="item"><div class="row"><span class="nm">Blueberry Pancakes</span><span class="pr">$12</span></div><div class="ds">Three pancakes filled with sweet blueberries.</div></div>
+    <div class="item"><div class="row"><span class="nm">Strawberry Pancakes</span><span class="pr">$12</span></div><div class="ds">Three pancakes topped with fresh strawberries.</div></div>
+    <div class="item"><div class="row"><span class="nm">French Toast</span><span class="pr">$11</span></div><div class="ds">Two slices of french toast cut in half.</div></div>
+    <div class="item"><div class="row"><span class="nm">Strawberry French Toast</span><span class="pr">$13</span></div><div class="ds">Two slices of french toast topped with strawberries.</div></div>
+    <div class="item"><div class="row"><span class="nm">Plain Belgian Waffle</span><span class="pr">$12</span></div><div class="ds">Golden belgian waffle served warm and fresh.</div></div>
+    <div class="item"><div class="row"><span class="nm">Chocolate Waffle</span><span class="pr">$13</span></div><div class="ds">Belgian waffle topped with rich chocolate flavor.</div></div>
+  </div>
+</section>
+
+<!-- SIDES (merged: breakfast + lunch/dinner) -->
+<section class="cat" id="sides">
+  <h2>Sides</h2>
+  <p class="sub">Perfect extras to complete any meal.</p>
+  <div class="items">
+    <div class="item"><div class="row"><span class="nm">Hashbrowns</span><span class="pr">$6</span></div></div>
+    <div class="item"><div class="row"><span class="nm">One Egg</span><span class="pr">$2</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Toast</span><span class="pr">$4</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Bacon</span><span class="pr">$6</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Sausage</span><span class="pr">$6</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Hamburger Patty</span><span class="pr">$7</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Chicken Breast</span><span class="pr">$8</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Ham</span><span class="pr">$6</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Avocado</span><span class="pr">$4</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Cottage Cheese</span><span class="pr">$4</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Corn Beef Hash</span><span class="pr">$8</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Biscuits and Gravy</span><span class="pr">$10</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Oatmeal</span><span class="pr">$9</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Fruit Bowl</span><span class="pr">$5</span></div></div>
+    <div class="item"><div class="row"><span class="nm">French Fries</span><span class="pr">$5</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Onion Rings</span><span class="pr">$5</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Mashed Potatoes</span><span class="pr">$4</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Coleslaw</span><span class="pr">$4</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Steamed Rice</span><span class="pr">$3</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Refried Beans</span><span class="pr">$3</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Tortilla (Corn/Flour)</span><span class="pr">$2</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Side Salad</span><span class="pr">$5</span></div></div>
+  </div>
+</section>
+
+<!-- BURGERS -->
+<section class="cat" id="burgers">
+  <h2>Burgers</h2>
+  <p class="sub">Served with french fries, coleslaw or potato salad. Extra patty +$5</p>
+  <div class="items">
+    <div class="item"><div class="row"><span class="nm">Cheese Burger (1/3lb)</span><span class="pr">$15</span></div><div class="ds">Classic char-grilled beef burger topped with melted cheese.</div></div>
+    <div class="item"><div class="row"><span class="nm">Bacon Cheeseburger</span><span class="pr">$16</span></div><div class="ds">Juicy beef burger with crispy bacon and melted cheese.</div></div>
+    <div class="item"><div class="row"><span class="nm">Avocado Bacon Burger</span><span class="pr">$17</span></div><div class="ds">Charbroiled burger topped with avocado, bacon and melted cheese.</div></div>
+    <div class="item"><div class="row"><span class="nm">Western Burger</span><span class="pr">$17</span></div><div class="ds">Hickory BBQ style burger topped with crispy onion rings.</div></div>
+    <div class="item"><div class="row"><span class="nm">Garden Burger</span><span class="pr">$17</span></div><div class="ds">Delicious veggie-style burger served with fresh toppings.</div></div>
+    <div class="item"><div class="row"><span class="nm">Mushroom Burger</span><span class="pr">$17</span></div><div class="ds">1/3lb char-grilled beef patty with grilled onions, mushrooms and swiss cheese.</div></div>
+  </div>
+</section>
+
+<!-- DELI SANDWICHES -->
+<section class="cat" id="deli">
+  <h2>Deli Sandwiches</h2>
+  <p class="sub">Served with choice of french fries, coleslaw, or potato salad. Choice of bread. All come with mayo, mustard, lettuce and tomato. Half / Full pricing.</p>
+  <div class="items">
+    <div class="item"><div class="row"><span class="nm">N.Y. Style Pastrami</span><span class="pr">$14 / $16</span></div><div class="ds">Classic New York style pastrami sandwich on your choice of bread.</div></div>
+    <div class="item"><div class="row"><span class="nm">Corned Beef</span><span class="pr">$14 / $16</span></div><div class="ds">Tender corned beef sandwich with fresh toppings and choice of bread.</div></div>
+    <div class="item"><div class="row"><span class="nm">Tuna Salad</span><span class="pr">$14 / $16</span></div><div class="ds">Fresh homemade tuna salad served with lettuce and tomato.</div></div>
+    <div class="item"><div class="row"><span class="nm">Beef Brisket, Au Jus</span><span class="pr">$14 / $16</span></div><div class="ds">Slow-cooked beef brisket served juicy and flavorful with au jus.</div></div>
+    <div class="item"><div class="row"><span class="nm">Roast Beef</span><span class="pr">$13 / $16</span></div><div class="ds">Fresh sliced roast beef sandwich on your choice of bread.</div></div>
+    <div class="item"><div class="row"><span class="nm">Meat Loaf</span><span class="pr">$13 / $15</span></div><div class="ds">Homestyle meat loaf sandwich served warm and fresh.</div></div>
+    <div class="item"><div class="row"><span class="nm">Ham</span><span class="pr">$13 / $15</span></div><div class="ds">Classic ham sandwich with mayo, mustard, lettuce and tomato.</div></div>
+    <div class="item"><div class="row"><span class="nm">B.L.T.</span><span class="pr">$13 / $15</span></div><div class="ds">Crispy bacon, lettuce and tomato sandwich on toasted bread.</div></div>
+    <div class="item"><div class="row"><span class="nm">Turkey</span><span class="pr">$13 / $15</span></div><div class="ds">Fresh turkey sandwich with lettuce, tomato and choice of bread.</div></div>
+    <div class="item"><div class="row"><span class="nm">Club</span><span class="pr">$13 / $16</span></div><div class="ds">Classic deli club sandwich stacked with fresh ingredients.</div></div>
+  </div>
+</section>
+
+<!-- HOT SANDWICHES & MELTS (merged From The Grill + Hot Sandwiches) -->
+<section class="cat" id="hot-melts">
+  <h2>Hot Sandwiches &amp; Melts</h2>
+  <p class="sub">Grilled and dipped favorites served with fries. From The Grill items served on grilled rye or sourdough with choice of fries, slaw, or potato salad.</p>
+  <div class="items">
+    <div class="item"><div class="row"><span class="nm">Grilled Cheese</span><span class="pr">$10</span></div><div class="ds">Classic grilled cheese sandwich served hot and crispy.</div></div>
+    <div class="item"><div class="row"><span class="nm">Grilled Cheese &amp; Bacon</span><span class="pr">$13</span></div><div class="ds">Melted cheese with crispy bacon on grilled bread.</div></div>
+    <div class="item"><div class="row"><span class="nm">Grilled Cheese &amp; Ham</span><span class="pr">$13</span></div><div class="ds">Grilled ham and melted cheese on toasted bread.</div></div>
+    <div class="item"><div class="row"><span class="nm">Grilled Turkey Melt</span><span class="pr">$13</span></div><div class="ds">Turkey with melted cheese on grilled rye or sourdough.</div></div>
+    <div class="item"><div class="row"><span class="nm">Grilled Pastrami Melt</span><span class="pr">$16</span></div><div class="ds">Hot pastrami with melted cheese grilled to perfection.</div></div>
+    <div class="item"><div class="row"><span class="nm">Grilled Corned Beef Melt</span><span class="pr">$16</span></div><div class="ds">Corned beef with melted cheese on toasted grilled bread.</div></div>
+    <div class="item"><div class="row"><span class="nm">Tuna or Poultry Salad Melt</span><span class="pr">$14</span></div><div class="ds">Choice of tuna or poultry salad with melted cheese.</div></div>
+    <div class="item"><div class="row"><span class="nm">Patty Melt</span><span class="pr">$17</span></div><div class="ds">Juicy beef patty with grilled onions and melted cheese.</div></div>
+    <div class="item"><div class="row"><span class="nm">Reuben Sandwich</span><span class="pr">$17</span></div><div class="ds">Classic reuben served on grilled rye bread.</div></div>
+    <div class="item"><div class="row"><span class="nm">Hot Meat Loaf</span><span class="pr">$17</span></div><div class="ds">Open-face meat loaf served with mashed potatoes.</div></div>
+    <div class="item"><div class="row"><span class="nm">Pastrami Dip / Beef Brisket Dip</span><span class="pr">$17</span></div><div class="ds">Served with au jus and crispy french fries.</div></div>
+    <div class="item"><div class="row"><span class="nm">Corn Beef Dip / Roast Beef Dip</span><span class="pr">$17</span></div><div class="ds">Served with au jus and golden french fries.</div></div>
+  </div>
+</section>
+
+<!-- SPECIALTY SANDWICHES (was Gourmet) -->
+<section class="cat" id="specialty">
+  <h2>Specialty Sandwiches</h2>
+  <p class="sub">Served with choice of french fries, coleslaw or potato salad.</p>
+  <div class="items">
+    <div class="item"><div class="row"><span class="nm">Beefeater Sandwich</span><span class="pr">$17</span></div><div class="ds">Grilled roast beef, melted cheese, tomatoes with green chili strips. On sourdough.</div></div>
+    <div class="item"><div class="row"><span class="nm">Greek Gyro Sandwich</span><span class="pr">$17</span></div><div class="ds">Savory beef &amp; lamb with our special cucumber sauce. On pita bread.</div></div>
+    <div class="item"><div class="row"><span class="nm">Steak Sandwich</span><span class="pr">$18</span></div><div class="ds">Top sirloin charbroiled on sourdough topped with onion rings.</div></div>
+    <div class="item"><div class="row"><span class="nm">Cuban Sandwich</span><span class="pr">$17</span></div><div class="ds">Ham, roasted pork, swiss cheese, mustard &amp; pickles. On a grilled roll.</div></div>
+  </div>
+</section>
+
+<!-- SOUPS & PASTAS -->
+<section class="cat" id="soups">
+  <h2>Soups &amp; Pastas</h2>
+  <p class="sub">Served with bagel chips.</p>
+  <div class="items">
+    <div class="item"><div class="row"><span class="nm">Chicken Noodle Soup</span><span class="pr">$7</span></div><div class="ds">Classic homemade chicken noodle soup served hot.</div></div>
+    <div class="item"><div class="row"><span class="nm">Chicken Tortilla Soup</span><span class="pr">$7</span></div><div class="ds">Flavorful tortilla soup with chicken and fresh ingredients.</div></div>
+    <div class="item"><div class="row"><span class="nm">Clam Chowder</span><span class="pr">$9</span></div><div class="ds">Creamy clam chowder, Friday through Sunday only.</div></div>
+    <div class="item"><div class="row"><span class="nm">Spaghetti</span><span class="pr">$7</span></div><div class="ds">Traditional spaghetti pasta served warm and fresh.</div></div>
+    <div class="item"><div class="row"><span class="nm">Fettuccine Alfredo</span><span class="pr">$9</span></div><div class="ds">Creamy alfredo pasta with rich parmesan flavor.</div></div>
+  </div>
+</section>
+
+<!-- SALADS -->
+<section class="cat" id="salads">
+  <h2>Salads</h2>
+  <p class="sub">Dressings: Caesar, Blue Cheese, Ranch, Vinaigrette, Thousand Island, Greek &amp; Honey Mustard.</p>
+  <div class="items">
+    <div class="item"><div class="row"><span class="nm">Caesar Salad</span><span class="pr">$14</span></div><div class="ds">Romaine, scallions, croutons, parmesan cheese tossed with caesar dressing.</div></div>
+    <div class="item"><div class="row"><span class="nm">Cobb Salad</span><span class="pr">$17</span></div><div class="ds">Turkey, bacon, avocado, tomato, blue cheese crumbs and hard-boiled egg.</div></div>
+    <div class="item"><div class="row"><span class="nm">Chef's Salad</span><span class="pr">$17</span></div><div class="ds">Ham, turkey, swiss cheese, hard-boiled eggs and tomato on iceberg lettuce.</div></div>
+    <div class="item"><div class="row"><span class="nm">Spinach &amp; Berries</span><span class="pr">$18</span></div><div class="ds">Grilled chicken, strawberries, blueberries, goat cheese and almonds.</div></div>
+    <div class="item"><div class="row"><span class="nm">BBQ Chicken Salad</span><span class="pr">$17</span></div><div class="ds">Mixed greens, corn, black beans, tomato, tortilla chips and BBQ sauce.</div></div>
+  </div>
+</section>
+
+<!-- SEAFOOD (was From The Sea) -->
+<section class="cat" id="seafood">
+  <h2>Seafood</h2>
+  <p class="sub">Served with garlic bread &amp; choice of rice, vegetables or potatoes.</p>
+  <div class="items">
+    <div class="item"><div class="row"><span class="nm">Louisiana Blackened Salmon</span><span class="pr">$24</span></div><div class="ds">Blackened salmon seasoned with bold Louisiana spices.</div></div>
+    <div class="item"><div class="row"><span class="nm">Fried Shrimp Platter</span><span class="pr">$22</span></div><div class="ds">Crispy golden fried shrimp served fresh and hot.</div></div>
+    <div class="item"><div class="row"><span class="nm">Grilled Salmon</span><span class="pr">$24</span></div><div class="ds">Fresh grilled salmon cooked to perfection.</div></div>
+    <div class="item"><div class="row"><span class="nm">Red Snapper</span><span class="pr">$22</span></div><div class="ds">Seasoned red snapper served with your choice of sides.</div></div>
+    <div class="item"><div class="row"><span class="nm">Fish &amp; Chips</span><span class="pr">$22</span></div><div class="ds">Crispy battered fish served with golden french fries.</div></div>
+  </div>
+</section>
+
+<!-- DINNER ENTREES (was Entrees Lunch & Dinner) -->
+<section class="cat" id="entrees">
+  <h2>Dinner Entrees</h2>
+  <p class="sub">Served with choice of potatoes or vegetables. Add soup or salad +$3</p>
+  <div class="items">
+    <div class="item"><div class="row"><span class="nm">Meatloaf</span><span class="pr">$18</span></div><div class="ds">Fresh homemade meatloaf served with savory gravy.</div></div>
+    <div class="item"><div class="row"><span class="nm">Country Fried Steak</span><span class="pr">$18</span></div><div class="ds">Breaded steak topped with rich country gravy.</div></div>
+    <div class="item"><div class="row"><span class="nm">Liver &amp; Onions</span><span class="pr">$18</span></div><div class="ds">Beef liver topped with grilled onions. Add bacon +$1</div></div>
+    <div class="item"><div class="row"><span class="nm">BBQ Pork Ribs</span><span class="pr">$19</span></div><div class="ds">Tender BBQ pork ribs served with coleslaw &amp; potatoes.</div></div>
+    <div class="item"><div class="row"><span class="nm">Pork Chops</span><span class="pr">$19</span></div><div class="ds">Two tender pork chops cooked to perfection.</div></div>
+    <div class="item"><div class="row"><span class="nm">Top Sirloin Steak</span><span class="pr">$23</span></div><div class="ds">Juicy top sirloin steak served with our secret sauce.</div></div>
+    <div class="item"><div class="row"><span class="nm">Chili Size</span><span class="pr">$15</span></div><div class="ds">Beef patty on toasted buns topped with hearty chili.</div></div>
+  </div>
+</section>
+
+<!-- APPETIZERS -->
+<section class="cat" id="appetizers">
+  <h2>Appetizers</h2>
+  <p class="sub">Perfect starters and shareable favorites.</p>
+  <div class="items">
+    <div class="item"><div class="row"><span class="nm">Cheese Quesadilla</span><span class="pr">$10</span></div><div class="ds">Cheddar and jack cheese served with sour cream, guacamole &amp; salsa.</div></div>
+    <div class="item"><div class="row"><span class="nm">Chili Fries</span><span class="pr">$11</span></div><div class="ds">French fries topped with melted jack and cheddar cheese.</div></div>
+    <div class="item"><div class="row"><span class="nm">Buffalo Wings</span><span class="pr">$12</span></div><div class="ds">Crispy buffalo wings served with ranch dressing.</div></div>
+    <div class="item"><div class="row"><span class="nm">BBQ Wings</span><span class="pr">$12</span></div><div class="ds">BBQ wings served hot with ranch dressing.</div></div>
+    <div class="item"><div class="row"><span class="nm">Garlic &amp; Parmesan Fries</span><span class="pr">$12</span></div><div class="ds">Golden fries tossed with garlic, parmesan cheese &amp; ranch dressing.</div></div>
+  </div>
+</section>
+
+<!-- DESSERTS -->
+<section class="cat" id="desserts">
+  <h2>Desserts</h2>
+  <p class="sub">Sweet treats to finish your meal perfectly.</p>
+  <div class="items">
+    <div class="item"><div class="row"><span class="nm">Carrot Cake</span><span class="pr">$6</span></div><div class="ds">Classic moist carrot cake with rich flavor.</div></div>
+    <div class="item"><div class="row"><span class="nm">Chocolate Fudge Cake</span><span class="pr">$7</span></div><div class="ds">Rich chocolate fudge cake topped with creamy frosting.</div></div>
+    <div class="item"><div class="row"><span class="nm">Coconut Lemon Cake</span><span class="pr">$7</span></div><div class="ds">Soft lemon cake blended with sweet coconut flavor.</div></div>
+    <div class="item"><div class="row"><span class="nm">Strawberry Cheesecake</span><span class="pr">$9</span></div><div class="ds">Delicious classic.</div></div>
+    <div class="item"><div class="row"><span class="nm">Tiramisu</span><span class="pr">$9</span></div><div class="ds">Another famous classic.</div></div>
+    <div class="item"><div class="row"><span class="nm">Brownie Sundae</span><span class="pr">$8</span></div><div class="ds">Chocolate brownie topped with a scoop of ice cream, chocolate syrup, whipped cream &amp; nuts.</div></div>
+  </div>
+</section>
+
+<!-- DRINKS -->
+<section class="cat" id="drinks">
+  <h2>Drinks</h2>
+  <p class="sub">Refreshing beverages served all day.</p>
+  <div class="items">
+    <div class="item"><div class="row"><span class="nm">Coffee</span><span class="pr">$3.50</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Hot Tea</span><span class="pr">$3.50</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Hot Chocolate</span><span class="pr">$4.00</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Chocolate Milk</span><span class="pr">$3.50</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Milk</span><span class="pr">$3.00</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Orange Juice</span><span class="pr">$5.50</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Apple Juice</span><span class="pr">$4.00</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Cranberry Juice</span><span class="pr">$4.00</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Iced Tea</span><span class="pr">$3.75</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Arnold Palmer</span><span class="pr">$3.75</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Soft Drinks</span><span class="pr">$3.50</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Smoothies</span><span class="pr">$6.00</span></div></div>
+    <div class="item"><div class="row"><span class="nm">Milk Shakes</span><span class="pr">$6.00</span></div></div>
+  </div>
+</section>
+
+<!-- KIDS MENU -->
+<section class="cat" id="kids">
+  <h2>Kids Menu</h2>
+  <p class="sub">Delicious favorites made just for kids.</p>
+  <div class="items">
+    <div class="item"><div class="row"><span class="nm">Pancakes</span><span class="pr">$6</span></div><div class="ds">2 mini pancakes served with 1 egg and 2 sausage or bacon.</div></div>
+    <div class="item"><div class="row"><span class="nm">French Toast</span><span class="pr">$6</span></div><div class="ds">Served with 1 egg and 2 sausage or bacon.</div></div>
+    <div class="item"><div class="row"><span class="nm">Waffle</span><span class="pr">$6</span></div><div class="ds">Half waffle served with 1 egg and 2 sausage or bacon.</div></div>
+    <div class="item"><div class="row"><span class="nm">Grilled Cheese</span><span class="pr">$6</span></div><div class="ds">Served with crispy french fries.</div></div>
+    <div class="item"><div class="row"><span class="nm">Cheeseburger</span><span class="pr">$7</span></div><div class="ds">Served with golden french fries.</div></div>
+    <div class="item"><div class="row"><span class="nm">Chicken Strips</span><span class="pr">$6</span></div><div class="ds">Crispy chicken strips served with french fries.</div></div>
+    <div class="item"><div class="row"><span class="nm">Marinara Pasta</span><span class="pr">$6</span></div><div class="ds">Warm marinara pasta served with a fruit cup.</div></div>
+  </div>
+</section>
+  </div>
+</div>
+
+<footer>© 2026 Roxsbury Deli &amp; Grill · 443 W Channel Islands Blvd, Port Hueneme, CA 93041</footer>
+
+<script>
+  // Scroll reveal (safety net)
+  const io = new IntersectionObserver((e)=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in');});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  setTimeout(()=>document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in')),1200);
+
+  // Rail scrollspy
+  const cats = document.querySelectorAll('.cat');
+  const railLinks = document.querySelectorAll('.rail a');
+  const spy = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting){
+        const id = en.target.id;
+        railLinks.forEach(a=>a.classList.toggle('active', a.getAttribute('href')==='#'+id));
+      }
+    });
+  },{rootMargin:'-20% 0px -70% 0px'});
+  cats.forEach(c=>spy.observe(c));
+
+  // Mobile hamburger
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('.nav .links');
+  if (navToggle && navMenu){
+    navToggle.addEventListener('click', () => {
+      const open = navMenu.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navMenu.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }));
+  }
+</script>
+</body>
+</html>

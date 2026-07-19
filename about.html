@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roxsbury Deli & Grill — Our Story & History</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  /* STORY BLOCKS */
+  .story-block{padding:70px 0;border-top:1px solid rgba(255,255,255,.05);}
+  .story-block:first-of-type{border-top:0;}
+  .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+  .story-grid.flip .media{order:2;}
+  .story-grid .media{border-radius:22px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.45);}
+  .story-grid .media img{width:100%;height:420px;object-fit:cover;display:block;}
+  .story-grid .media video{width:100%;height:420px;object-fit:cover;display:block;background:#000;filter:brightness(.82) contrast(1.1) saturate(1.05);}
+  .story-grid .copy h2{font-size:clamp(1.8rem,3.5vw,2.6rem);margin-bottom:16px;color:var(--gold);}
+  .story-grid .copy p{color:var(--muted);margin-bottom:14px;font-size:1.02rem;}
+  .story-grid .copy .tag{display:inline-block;font-size:.75rem;letter-spacing:2px;text-transform:uppercase;
+    color:var(--gold);border:1px solid var(--gold);border-radius:999px;padding:5px 14px;margin-bottom:18px;}
+  .facts{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px;}
+  .fact{background:var(--panel-2);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:14px 20px;}
+  .fact b{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--gold);display:block;}
+  .fact span{font-size:.78rem;color:var(--muted);}
+
+  /* TIMELINE */
+  .timeline{margin-top:30px;border-left:2px solid rgba(245,190,0,.3);padding-left:26px;}
+  .tl-item{position:relative;margin-bottom:26px;}
+  .tl-item::before{content:"";position:absolute;left:-33px;top:4px;width:14px;height:14px;border-radius:50%;
+    background:var(--gold);box-shadow:0 0 0 4px rgba(245,190,0,.15);}
+  .tl-item .yr{font-family:'Playfair Display',serif;color:var(--gold);font-size:1.15rem;margin-bottom:4px;}
+  .tl-item p{color:var(--muted);font-size:.96rem;}
+
+  .note{font-size:.82rem;color:#8c8c8c;font-style:italic;margin-top:18px;}
+
+  @media(max-width:880px){
+    .story-grid,.story-grid.flip .media{grid-template-columns:1fr;order:0;}
+    .story-grid .media img{height:300px;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="index.html">
+    <img src="assets/logo.png" alt="Roxsbury logo">
+    <span><b>Roxsbury</b><span>Deli &amp; Grill</span></span>
+  </a>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+  <a class="nav-menu" href="menu.html">View Menu</a>
+  <a class="nav-order" href="https://roxsbury.tatinc.us" target="_blank" rel="noopener">Order Online</a>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="index.html#location">Location</a>
+    <a href="index.html#reviews">Reviews</a>
+  </div>
+</nav>
+
+<header class="topband centered about-hero">
+  <div class="wrap">
+    <div class="kicker">Our Story &amp; History</div>
+    <h1>A Local Tradition, Carried to <span class="accent">Today</span></h1>
+    <p class="lead">Three decades as a Port Hueneme tradition, a year-and-a-half dark, and a fresh chapter under new ownership. Here's how Roxsbury got here — and where it's going.</p>
+  </div>
+</header>
+
+<!-- HISTORY (the long era) — now first -->
+<section class="story-block">
+  <div class="wrap story-grid flip">
+    <div class="media reveal">
+      <img src="assets/fondo.png" alt="Neighborhood diner interior with counter seating (illustrative)">
+    </div>
+    <div class="copy reveal">
+      <span class="tag">History · The Roxsbury Era</span>
+      <h2>A <span class="accent">Neighborhood Tradition</span></h2>
+      <p>For roughly <strong>thirty years</strong>, Roxsbury Deli &amp; Grill was a fixture of Port Hueneme — a <strong>neighborhood diner</strong> on Channel Islands Blvd, opened around 1994, directly across from the Navy base. Under original owner Andrew Papanicolaou, it became the kind of place families returned to for decades.</p>
+      <p>Generations of regulars named it a Neighborhood Favorite six years running (2017–2022). Reviewers still talk about the Reuben, the carrot cake, and a staff that felt like family. By the time it closed, the old listing carried 350+ reviews and nearly 200 photos — a record of a beloved institution.</p>
+      <p class="note">Photo at right is an illustrative neighborhood-diner interior, not Roxsbury's own archive. We're sourcing original Roxsbury photos to replace it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- OUR STORY (2025 reopening) — now second -->
+<section class="story-block">
+  <div class="wrap story-grid">
+    <div class="media reveal">
+      <video autoplay muted loop playsinline poster="assets/about-story.jpg">
+        <source src="assets/restaurant.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="copy reveal">
+      <span class="tag">Our Story · 2025</span>
+      <h2>A Familiar Door, <span class="accent">Open Again</span></h2>
+      <p>In December 2023, a storm flooded the building and Roxsbury Deli &amp; Grill went dark — for more than a year and a half, a Port Hueneme staple was simply gone.</p>
+      <p>Summer 2025, it came back. Under <strong>new ownership</strong>, the griddle is hot again at 443 W Channel Islands Blvd: the same breakfast crowd, the same burgers and deli sandwiches, the same corner across from the base that locals grew up with.</p>
+      <p>The menu is leaner than its heyday, but the heart of the place — fresh, hot, American comfort food served by people who remember your order — is right where it always was.</p>
+      <div class="facts">
+        <div class="fact"><b>2025</b><span>Reopened under new owners</span></div>
+        <div class="fact"><b>443</b><span>W Channel Islands Blvd</span></div>
+        <div class="fact"><b>8am</b><span>Doors open daily</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="story-block">
+  <div class="wrap reveal">
+    <div class="kicker">Timeline</div>
+    <h2 style="margin-bottom:10px;color:var(--gold);">How We Got Here</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="yr">c. 1994</div>
+        <p>Andrew Papanicolaou opens Roxsbury Deli &amp; Grill at 443 W Channel Islands Blvd — a 1950s-themed neighborhood diner across from the Port Hueneme base.</p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2017–2022</div>
+        <p>Named a Neighborhood Favorite on local community rankings six years in a row. Builds a loyal, multi-generational regular base.</p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">December 2023</div>
+        <p>A storm floods the building. Roxsbury closes its doors — beginning an 18-month hiatus.</p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">Summer 2025</div>
+        <p>Roxsbury reopens under new ownership, carrying the community's traditions forward with a refreshed, focused menu.</p>
+      </div>
+    </div>
+    <p class="note">Dates compiled from public sources (Ventura County Star reopening report, Yelp/Nextdoor community records, LinkedIn). Some years are approximate where primary records are unavailable.</p>
+  </div>
+</section>
+
+<footer>© 2026 Roxsbury Deli &amp; Grill · 443 W Channel Islands Blvd, Port Hueneme, CA 93041</footer>
+
+<script>
+  const io = new IntersectionObserver((e)=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in');});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  setTimeout(()=>document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in')),1200);
+
+  // Guarantee hero video autoplays + loops (muted autoplay is browser-allowed; covers environments where the attribute alone is throttled)
+  const heroVid = document.querySelector('.story-grid .media video');
+  if (heroVid){ heroVid.muted = true; heroVid.play().catch(()=>{}); }
+
+  // Mobile hamburger
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('.nav .links');
+  if (navToggle && navMenu){
+    navToggle.addEventListener('click', () => {
+      const open = navMenu.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navMenu.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }));
+  }
+</script>
+</body>
+</html>
