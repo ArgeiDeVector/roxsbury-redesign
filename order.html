@@ -7,16 +7,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <style>
-  /* ORDER PAGE — our nav on top, tatinc embedded underneath, no double-nav.
-     Our nav is made opaque and the iframe is pulled up ~60px so tatinc's own
-     top nav sits hidden behind our bar. Fragile if tatinc reskins its header. */
-  body{overflow:hidden;}
+  :root{--order-crop:356px;--order-crop-m:420px;}
+  /* ORDER PAGE — matches site layout: nav fixed on top, iframe flows UNDER the
+     nav with the SAME var(--nav-h) offset, page does NOT lock. Tatinc's own
+     header + brand/contact block is cropped behind our nav via --order-crop
+     (measured: tatinc category buttons start ~356px down desktop, ~420px mobile).
+     Cross-origin, so we can only shift the whole iframe — if tatinc reskins its
+     header, just bump --order-crop. */
   .nav{background:#0e0e0e;}
-  .order-frame{position:fixed;left:0;right:0;bottom:0;
-    top:calc(var(--nav-h) - 60px);background:#fff;}
-  .order-frame iframe{width:100%;height:100%;border:0;display:block;}
+  .order-frame{position:relative;margin-top:var(--nav-h);
+    height:calc(100vh - var(--nav-h));background:#fff;overflow:hidden;}
+  .order-frame iframe{position:absolute;top:calc(-1 * var(--order-crop));left:0;
+    width:100%;height:calc(100% + var(--order-crop));border:0;display:block;}
   @media(max-width:880px){
-    .order-frame{top:calc(var(--nav-h) - 56px);}
+    .order-frame iframe{top:calc(-1 * var(--order-crop-m));height:calc(100% + var(--order-crop-m));}
   }
 </style>
 </head>
