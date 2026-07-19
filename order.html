@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roxsbury Deli &amp; Grill — Order Online</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  /* ORDER PAGE — our nav on top, tatinc embedded underneath, no double-nav.
+     Our nav is made opaque and the iframe is pulled up ~60px so tatinc's own
+     top nav sits hidden behind our bar. Fragile if tatinc reskins its header. */
+  body{overflow:hidden;}
+  .nav{background:#0e0e0e;}
+  .order-frame{position:fixed;left:0;right:0;bottom:0;
+    top:calc(var(--nav-h) - 60px);background:#fff;}
+  .order-frame iframe{width:100%;height:100%;border:0;display:block;}
+  @media(max-width:880px){
+    .order-frame{top:calc(var(--nav-h) - 56px);}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="index.html">
+    <img src="assets/logo.png" alt="Roxsbury logo">
+    <span><b>Roxsbury</b><span>Deli &amp; Grill</span></span>
+  </a>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="menu.html">Menu</a>
+    <a href="order.html" class="active">Order</a>
+    <a href="index.html#location">Location</a>
+    <a href="index.html#reviews">Reviews</a>
+  </div>
+</nav>
+
+<div class="order-frame">
+  <iframe src="https://roxsbury.tatinc.us" title="Roxsbury online ordering" loading="lazy"></iframe>
+</div>
+
+<script>
+  // Mobile hamburger (same pattern as other pages)
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('.nav .links');
+  if (navToggle && navMenu){
+    navToggle.addEventListener('click', () => {
+      const open = navMenu.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navMenu.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }));
+  }
+</script>
+</body>
+</html>
