@@ -7,21 +7,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <style>
-  :root{--order-crop:356px;--order-crop-m:420px;}
-  /* ORDER PAGE — matches site layout: nav fixed on top, iframe flows UNDER the
-     nav with the SAME var(--nav-h) offset, page does NOT lock. Tatinc's own
-     header + brand/contact block is cropped behind our nav via --order-crop
-     (measured: tatinc category buttons start ~356px down desktop, ~420px mobile).
-     Cross-origin, so we can only shift the whole iframe — if tatinc reskins its
-     header, just bump --order-crop. */
+  /* ORDER PAGE — B2: full-page, robust embed.
+     Nav stays position:fixed (same as every other page). The iframe below is
+     TALL (covers the whole order menu) so the WHOLE PAGE scrolls — not an
+     internal box scroll. The ONLY offset is our nav height (var(--nav-h));
+     nothing is tied to tatinc's internal layout, so swapping the order provider
+     (or tatinc reskinning) just works.
+     --order-height is order-page-agnostic room for the full menu; bump if a
+     provider adds many items. No crop trick, so the brand shows twice
+     (our nav + provider header) — accepted, can't reach into cross-origin page. */
+  :root{--order-height:11000px;}
   .nav{background:#0e0e0e;}
   .order-frame{position:relative;margin-top:var(--nav-h);
-    height:calc(100vh - var(--nav-h));background:#fff;overflow:hidden;}
-  .order-frame iframe{position:absolute;top:calc(-1 * var(--order-crop));left:0;
-    width:100%;height:calc(100% + var(--order-crop));border:0;display:block;}
-  @media(max-width:880px){
-    .order-frame iframe{top:calc(-1 * var(--order-crop-m));height:calc(100% + var(--order-crop-m));}
-  }
+    height:var(--order-height);background:#fff;}
+  .order-frame iframe{position:absolute;top:0;left:0;
+    width:100%;height:100%;border:0;display:block;}
 </style>
 </head>
 <body>
