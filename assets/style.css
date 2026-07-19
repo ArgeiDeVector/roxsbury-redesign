@@ -64,4 +64,10 @@ footer{text-align:center;padding:30px;background:#000;color:#888;font-size:.85re
   .nav .links.open{max-height:340px;padding:14px 28px 20px;}
   .nav .links a{width:100%;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.07);}
   .nav .links a::after{display:none;}  /* no underline in dropdown */
+
+  /* stack action pills vertically on mobile: View Menu (top) → Order (bottom) */
+  .nav{flex-wrap:wrap;}
+  .nav-toggle{margin-left:auto;}
+  .nav-menu{order:3;flex-basis:100%;width:fit-content;margin:6px 0 0 auto;}
+  .nav-order{order:4;flex-basis:100%;width:fit-content;margin:6px 0 0 auto;}
 }
