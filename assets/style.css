@@ -35,7 +35,7 @@ a{color:inherit;text-decoration:none;}
 .nav-toggle{display:none;}
 
 /* touch fix: kill draggable ghost, tap flash, iOS auto-number-link, sticky hover */
-.btn,.btn-primary,.btn-order,.btn-dir,.btn-ig,.nav .links a,.nav-toggle,a{
+.btn,.btn-primary,.btn-order,.btn-dir,.btn-ig,.nav .links a,.nav-toggle,a,img{
   -webkit-user-drag:none; user-drag:none;
   -webkit-tap-highlight-color:transparent;
   -webkit-touch-callout:none; user-select:none;
