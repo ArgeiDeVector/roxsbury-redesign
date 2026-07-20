@@ -380,14 +380,19 @@
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   setTimeout(()=>document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in')),1200);
 
-  // Rail scrollspy
+  // Rail scrollspy — highlight active category AND make the mobile strip follow it
   const cats = document.querySelectorAll('.cat');
   const railLinks = document.querySelectorAll('.rail a');
+  let activeCat = null;
   const spy = new IntersectionObserver((entries)=>{
     entries.forEach(en=>{
-      if(en.isIntersecting){
-        const id = en.target.id;
-        railLinks.forEach(a=>a.classList.toggle('active', a.getAttribute('href')==='#'+id));
+      if(en.isIntersecting && en.target.id !== activeCat){
+        activeCat = en.target.id;
+        railLinks.forEach(a=>a.classList.toggle('active', a.getAttribute('href')==='#'+activeCat));
+        if(window.matchMedia('(max-width:880px)').matches){
+          const link = [...railLinks].find(a=>a.getAttribute('href')==='#'+activeCat);
+          if(link) link.scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
+        }
       }
     });
   },{rootMargin:'-20% 0px -70% 0px'});
