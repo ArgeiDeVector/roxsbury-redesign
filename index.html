@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
 <title>Roxsbury Deli &amp; Grill</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
@@ -17,11 +18,11 @@
   .hero .cta{display:flex;gap:14px;flex-wrap:wrap;}
   .btn{padding:14px 30px;border-radius:40px;font-weight:600;font-size:.95rem;transition:.3s;cursor:pointer;border:0;}
   .btn-primary{background:var(--wine);color:#fff;}
-  .btn-primary:hover{background:var(--gold);color:#111;transform:translateY(-2px);}
+  .btn-primary:hover{background:var(--gold);color:#111;}
   .btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.25);}
   .btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
   .btn-order{background:var(--gold);color:#111;}
-  .btn-order:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(245,190,0,.35);}
+  .btn-order:hover{box-shadow:0 10px 26px rgba(245,190,0,.35);}
   .hero .photo{position:relative;display:flex;justify-content:center;align-items:center;min-height:360px;}
   .hero .photo img{width:90%;max-width:420px;height:auto;object-fit:contain;display:block;padding:0;background:transparent;}
 
@@ -31,13 +32,7 @@
 
   /* ABOUT */
   #about{background:linear-gradient(180deg,#0e0e0e,#121212);}
-  .about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:54px;align-items:center;}
-  .about-grid .story p{color:var(--muted);margin-bottom:16px;font-size:1.02rem;}
-  .about-grid .story .stats{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;}
-  .chip{background:var(--panel-2);border:1px solid rgba(255,255,255,.07);border-radius:999px;
-    padding:8px 16px;font-size:.82rem;color:#e8e8e8;}
-  .about-grid .img{border-radius:22px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.45);}
-  .about-grid .img img{width:100%;height:420px;object-fit:cover;display:block;}
+
   .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:54px;}
   .rcard{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:22px;}
   .rcard .stars{color:var(--gold);letter-spacing:2px;margin-bottom:10px;}
@@ -55,14 +50,12 @@
   .map-box .cap{font-size:.78rem;color:var(--muted);padding:10px 14px;border-top:1px solid rgba(255,255,255,.06);}
   .map-box .cap a{color:var(--gold);}
   .map-actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:4px;}
-  .btn-call,.btn-dir{font-size:.95rem;font-weight:600;padding:13px 22px;border-radius:999px;
+  .btn-dir{font-size:.95rem;font-weight:600;padding:13px 22px;border-radius:999px;
     transition:.22s;text-align:center;}
-  .btn-call{background:var(--gold);color:#111;}
-  .btn-call:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(245,190,0,.35);}
   .btn-dir{background:transparent;color:var(--gold);border:1px solid var(--gold);}
-  .btn-dir:hover{background:rgba(245,190,0,.12);transform:translateY(-2px);}
+  .btn-dir:hover{background:rgba(245,190,0,.12);}
   .btn-ig{background:var(--gold);color:#111;border-radius:999px;padding:13px 22px;font-size:.95rem;font-weight:600;transition:.22s;}
-  .btn-ig:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(245,190,0,.35);}
+  .btn-ig:hover{box-shadow:0 10px 26px rgba(245,190,0,.35);}
   .map-toggle{display:flex;gap:10px;justify-content:center;margin-bottom:14px;}
   .map-tab{font:600 .9rem 'Poppins',sans-serif;padding:10px 20px;border-radius:999px;cursor:pointer;
     background:var(--panel);color:#e8e8e8;border:1px solid rgba(255,255,255,.1);transition:.22s;}
@@ -92,7 +85,7 @@
   .ibox a{color:var(--text);}  /* phone + Instagram white per brand theme */
 
   @media(max-width:880px){
-    .hero .grid,.about-grid{grid-template-columns:1fr;gap:30px;}
+    .hero .grid{grid-template-columns:1fr;gap:30px;}
     .hero .photo img{height:320px;}
     .maps,.info,.reviews{grid-template-columns:1fr;}
     section.block{padding:80px 0;}
