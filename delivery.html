@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>Roxsbury Deli &amp; Grill — Delivery (Coming Soon)</title>
+<meta name="description" content="Roxsbury Deli &amp; Grill is coming soon to Grubhub, DoorDash, and Uber Eats. Order direct online today — no fees, no middleman.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="assets/logo.png" type="image/png">
+<style>
+  /* DELIVERY PAGE — coherent to site system (.rcard panels, gold/wine, Playfair).
+     Apps are guests: brand color appears ONLY as a small status dot.
+     All three apps are "coming soon" (none enrolled/active) — cards are
+     NON-clickable (no dead links to 404s or old-owner stores).
+     Single live action = Order Direct (owned channel, live now). */
+
+  /* Hero: same .topband language as Home, but not full 100vh (no photo column) */
+  .topband.hero{min-height:auto;padding:calc(var(--nav-h) + 56px) 0 36px;
+    background:radial-gradient(1200px 600px at 80% -10%,rgba(245,190,0,.10),transparent 60%);}
+  .topband.hero .eyebrow{display:inline-block;font-size:.8rem;letter-spacing:3px;
+    text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px;}
+  .topband.hero h1{color:var(--text);font-size:clamp(2.6rem,6vw,4.6rem);margin-bottom:18px;}
+  .topband.hero .lead{color:var(--muted);font-size:1.15rem;max-width:54ch;}
+  .pill-soon{display:inline-block;margin-top:20px;font-size:.78rem;letter-spacing:1px;
+    text-transform:uppercase;color:var(--gold);border:1px solid rgba(245,190,0,.45);
+    border-radius:999px;padding:6px 16px;}
+
+  section.block{padding:90px 0;}
+  .sec-title{font-size:clamp(2rem,4vw,3rem);margin-bottom:14px;}
+
+  /* App cards = site's .rcard shape, 3-up (reuses .reviews grid rhythm) */
+  .app-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:42px;}
+  .app-card{display:flex;flex-direction:column;align-items:flex-start;gap:16px;min-height:160px;}
+  .app-dot{width:36px;height:36px;border-radius:50%;flex:0 0 auto;}
+  .app-name{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--text);line-height:1;}
+  /* COHERENT .tag STYLE: gold text + gold border (matches About .tag + hero pill) */
+  .status{margin-top:auto;font-size:.72rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+    padding:5px 14px;border-radius:999px;border:1px solid var(--gold);color:var(--gold);}
+
+  /* Owned-ordering callout = site's .map-hero treatment (gold border + faint glow) */
+  .ownit{margin-top:48px;background:#161616;border:1px solid rgba(245,190,0,.35);
+    border-radius:18px;padding:34px;display:flex;align-items:center;justify-content:space-between;
+    gap:24px;flex-wrap:wrap;}
+  .ownit h3{font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:8px;}
+  .ownit p{color:var(--muted);font-size:.95rem;max-width:60ch;margin-bottom:4px;}
+  .ownit .btn-order{white-space:nowrap;background:var(--gold);color:#111;border-radius:40px;
+    padding:14px 30px;font-weight:600;font-size:.95rem;transition:.3s;text-decoration:none;display:inline-block;}
+  .ownit .btn-order:hover{box-shadow:0 10px 26px rgba(245,190,0,.35);}
+
+  .launch-note{margin-top:26px;text-align:center;color:var(--muted);font-size:.9rem;}
+
+  @media(max-width:880px){
+    .app-grid{grid-template-columns:1fr;}
+    section.block{padding:70px 0;}
+    .ownit{flex-direction:column;align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="index.html">
+    <img src="assets/logo.png" alt="Roxsbury logo">
+    <span><b>Roxsbury</b><span>Deli &amp; Grill</span></span>
+  </a>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="menu.html">Menu</a>
+    <a href="order.html">Order</a>
+    <a href="delivery.html" class="active">Delivery</a>
+    <a href="index.html#location">Location</a>
+    <a href="index.html#reviews">Reviews</a>
+  </div>
+</nav>
+
+<section class="topband hero" id="home">
+  <div class="wrap reveal">
+    <span class="eyebrow">Order Your Way</span>
+    <h1>Get Roxsbury <span class="accent">Delivered</span></h1>
+    <p class="lead">We're bringing Roxsbury to the delivery apps soon. Until then, order direct from us online — no fees, no middleman.</p>
+    <span class="pill-soon">Delivery apps coming soon</span>
+  </div>
+</section>
+
+<section class="block" id="apps">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Find Us On</div>
+      <h2 class="sec-title">Delivery <span class="accent">Apps</span></h2>
+      <p style="color:var(--muted);max-width:54ch;">We're planning to launch on the platforms you already order from. All are coming soon — ordering direct from us is live now.</p>
+    </div>
+
+    <div class="app-grid reveal">
+      <div class="rcard app-card">
+        <div class="app-dot" style="background:#F63440;"></div>
+        <div class="app-name">Grubhub</div>
+        <span class="status">Coming soon</span>
+      </div>
+      <div class="rcard app-card">
+        <div class="app-dot" style="background:#FF3008;"></div>
+        <div class="app-name">DoorDash</div>
+        <span class="status">Coming soon</span>
+      </div>
+      <div class="rcard app-card">
+        <div class="app-dot" style="background:#00D108;"></div>
+        <div class="app-name">Uber Eats</div>
+        <span class="status">Coming soon</span>
+      </div>
+    </div>
+
+    <p class="launch-note">We'll announce here the moment we launch on each app.</p>
+
+    <div class="ownit reveal">
+      <div>
+        <h3>Prefer to order <span class="accent">direct?</span></h3>
+        <p>No middleman, no fees skimmed off the top. Available right now.</p>
+        <p>Loved by <strong style="color:#fff;">609 locals</strong> on Google.</p>
+      </div>
+      <a class="btn-order" href="order.html">Order Direct →</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Roxsbury Deli &amp; Grill · 443 W Channel Islands Blvd, Port Hueneme, CA 93041</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
+  },{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  setTimeout(()=>document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in')), 1200);
+
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('.nav .links');
+  if (navToggle && navMenu){
+    navToggle.addEventListener('click', () => {
+      const open = navMenu.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navMenu.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }));
+  }
+</script>
+<script src="assets/protect.js"></script>
+</body>
+</html>
