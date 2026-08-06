@@ -79,7 +79,7 @@ footer{text-align:center;padding:30px;background:#000;color:#888;font-size:.85re
   .nav .links a::after{display:none;}  /* no underline in dropdown */
 
   /* Hamburger overlay: tap-to-close backdrop, blocks background scroll */
-  .nav-overlay{position:fixed;inset:0;top:var(--nav-h);background:rgba(0,0,0,.45);
+  .nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);
     opacity:0;visibility:hidden;transition:opacity .3s ease;z-index:900;}
   .nav-overlay.show{opacity:1;visibility:visible;}
   body.nav-lock{overflow:hidden;}
