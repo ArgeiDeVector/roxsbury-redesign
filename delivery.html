@@ -77,6 +77,7 @@
     <a href="index.html#reviews">Reviews</a>
   </div>
 </nav>
+<div class="nav-overlay"></div>
 
 <section class="topband hero" id="home">
   <div class="wrap reveal">
@@ -137,15 +138,25 @@
 
   const navToggle = document.querySelector('.nav-toggle');
   const navMenu = document.querySelector('.nav .links');
+  const navOverlay = document.querySelector('.nav-overlay');
+  function closeNav(){
+    navMenu.classList.remove('open');
+    navToggle.setAttribute('aria-expanded','false');
+    if(navOverlay) navOverlay.classList.remove('show');
+    document.body.classList.remove('nav-lock');
+  }
+  function openNav(){
+    navMenu.classList.add('open');
+    navToggle.setAttribute('aria-expanded','true');
+    if(navOverlay) navOverlay.classList.add('show');
+    document.body.classList.add('nav-lock');
+  }
   if (navToggle && navMenu){
     navToggle.addEventListener('click', () => {
-      const open = navMenu.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if(navMenu.classList.contains('open')) closeNav(); else openNav();
     });
-    navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      navMenu.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-    }));
+    if(navOverlay) navOverlay.addEventListener('click', closeNav);
+    navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
   }
 </script>
 <script src="assets/protect.js"></script>
